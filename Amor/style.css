@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Sacramento');
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Sacramento', cursive;
+  background-color: #f1e3d3;
+  overflow: hidden;
+}
+
+.valentines-day {
+  position: relative;
+  cursor: pointer;
+}
+
+.envelope {
+  position: relative;
+  filter: drop-shadow(0 0 25px rgba(0,0,0,.3));
+}
+
+.envelope:before {
+  content:"";
+  position: absolute;
+  width: 254px;
+  height: 254px;
+  background-color: #ff9494;
+  transform: rotate(-45deg);
+  border-radius: 0 15px 0 0;
+  left: -37px;
+  top: -82px;
+}
+
+.envelope:after {
+  content:"";
+  position: absolute;
+  background-color: #ff9494;
+  width: 360px;
+  height: 225px;
+  left: -90px;
+  top: 45px;
+}
+
+.heart {
+  position: relative;
+  background-color: #e01911;
+  display: inline-block;
+  height: 180px;
+  top: 50px;
+  left: 0;
+  transform: rotate(-45deg);
+  width: 180px;
+  filter: drop-shadow(0 -10px 25px rgba(0,0,0,.3));
+  transition: .5s;
+}
+
+.heart:before, .heart:after {
+  content:"";
+  background-color: #e01911;
+  border-radius: 50%;
+  height: 180px;
+  width: 180px;
+  position: absolute;
+}
+
+.heart:before {
+  top: -100px;
+  left: 0;
+}
+
+.heart:after {
+  left: 100px;
+  top: 0;
+}
+
+.text {
+  position: absolute;
+  font-family: arial;
+  letter-spacing: 5px;
+  text-align: center;
+  color: white;
+  z-index: 2;
+  top: 80px;
+  left: 15px;
+  transition: .5s;
+}
+
+.valentines-day:hover .heart {
+  transform: translateY(-50px) rotate(-45deg);
+}
+
+.valentines-day:hover .text {
+  transform: translateY(-50px);
+}
+
+#card {
+  width: 90%;
+  max-width: 400px;
+  height: auto;
+  margin: 5em auto;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+#card h2 {
+  font-size: 2em;
+  margin: 0;
+  color: pink;
+  text-align: center;
+}
+
+#card p {
+  font-size: 1.2em;
+  text-align: justify;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  #card {
+    width: 90%;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+  }
+
+  #card h2 {
+    font-size: 1.8em;
+  }
+
+  #card p {
+    font-size: 1em;
+  }
+}
